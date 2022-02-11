@@ -4,7 +4,7 @@ services:
   db:
     image: mariadb:latest
     volumes:
-      - ./db:/var/lib/mysql
+      - ${DB_MOUNTPOINT}:/var/lib/mysql
     env_file:
       - envfile
     command:
@@ -18,7 +18,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./nextcloud:/var/www/html
+      - ${APPDATA_MOUNTPOINT}:/var/www/html
     env_file:
       - envfile
     restart: always

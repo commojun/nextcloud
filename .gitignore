@@ -2,3 +2,4 @@ db/*
 nextcloud/*
 !.gitkeep
 envfile
+.env
