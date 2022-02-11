@@ -3,15 +3,17 @@ version: '3'
 services:
   db:
     image: mariadb:latest
-    restart: always
     volumes:
       - db:/var/lib/mysql
-    env-file:
+    env_file:
       - envfile
+    restart: always
   app:
     image: nextcloud:latest
     ports:
       - 8080:80
     volumes:
       - nextcloud:/var/www/html
+    env_file:
+      - envfile
     restart: always
