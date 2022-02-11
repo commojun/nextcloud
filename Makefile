@@ -1,10 +1,10 @@
 refresh: down up
 
 up:
-	docker compose up -d
+	docker-compose up -d
 
 down:
-	docker compose down
+	docker-compose down
 
 pull:
 	docker pull nextcloud:latest
