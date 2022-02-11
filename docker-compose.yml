@@ -16,7 +16,7 @@ services:
   app:
     image: nextcloud:latest
     ports:
-      - 8080:80
+      - ${PORT}:80
     volumes:
       - ${APPDATA_MOUNTPOINT}:/var/www/html
     env_file:
