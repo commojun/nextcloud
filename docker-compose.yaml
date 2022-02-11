@@ -4,16 +4,21 @@ services:
   db:
     image: mariadb:latest
     volumes:
-      - db:/var/lib/mysql
+      - ./db:/var/lib/mysql
     env_file:
       - envfile
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+      - "--innodb_strict_mode=OFF"
+      - "--innodb_read_only_compressed=OFF"
     restart: always
   app:
     image: nextcloud:latest
     ports:
       - 8080:80
     volumes:
-      - nextcloud:/var/www/html
+      - ./nextcloud:/var/www/html
     env_file:
       - envfile
     restart: always
