@@ -1,0 +1,4 @@
+db/*
+nextcloud/*
+!.gitkeep
+envfile
