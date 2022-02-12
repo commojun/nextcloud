@@ -13,8 +13,12 @@ services:
       - "--innodb_strict_mode=OFF"
       - "--innodb_read_only_compressed=OFF"
     restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
   app:
-    image: nextcloud:latest
+    image: nextcloud:custom
     ports:
       - ${PORT}:80
     volumes:
@@ -22,3 +26,7 @@ services:
     env_file:
       - envfile
     restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"

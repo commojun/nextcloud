@@ -10,7 +10,10 @@ pull:
 	docker pull nextcloud:latest
 	docker pull mariadb:latest
 
-update: pull build-all up
+build:
+	docker build -t nextcloud:custom ./dockerfile
+
+update: pull build up
 
 shell/%:
 	docker-compose exec $* bash
