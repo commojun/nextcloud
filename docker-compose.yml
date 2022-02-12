@@ -23,6 +23,9 @@ services:
       - ${PORT}:80
     volumes:
       - ${APPDATA_MOUNTPOINT}:/var/www/html
+      - ${MNT1}:/mnt/main
+      - ${MNT2}:/mnt/sub
+      - ${MNT3}:/mnt/archive
     env_file:
       - envfile
     restart: always
