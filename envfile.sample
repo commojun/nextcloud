@@ -3,3 +3,4 @@ MYSQL_PASSWORD=hoge
 MYSQL_DATABASE=nextcloud
 MYSQL_USER=nextcloud
 MYSQL_HOST=db
+NEXTCLOUD_TRUSTED_DOMAINS=next.example.com
