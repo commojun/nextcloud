@@ -7,7 +7,7 @@ down:
 	docker-compose down
 
 pull:
-	docker pull nextcloud:latest
+	docker pull nextcloud:apache
 	docker pull mariadb:latest
 
 build:
