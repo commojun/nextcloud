@@ -20,6 +20,13 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  redis:
+    image: redis:latest
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
   app:
     image: nextcloud:custom
     ports:
