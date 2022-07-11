@@ -9,6 +9,7 @@ down:
 pull:
 	docker pull nextcloud:apache
 	docker pull mariadb:latest
+	docker pull redis:latest
 
 build:
 	docker build -t nextcloud:custom ./dockerfile
