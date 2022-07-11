@@ -1,7 +1,7 @@
 FROM nextcloud:apache
 
 RUN apt-get update && apt-get install -y \
-    supervisor procps smbclient php-redis \
+    supervisor procps smbclient \
     libmagickcore-6.q16-6-extra \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir /var/log/supervisord /var/run/supervisord
