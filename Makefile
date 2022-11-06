@@ -8,7 +8,7 @@ down:
 
 pull:
 	docker pull nextcloud:apache
-	docker pull mariadb:latest
+	docker pull mariadb:10.8
 	docker pull redis:latest
 
 build:

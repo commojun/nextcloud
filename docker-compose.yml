@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: mariadb:latest
+    image: mariadb:10.8
     volumes:
       - ${DB_MOUNTPOINT}:/var/lib/mysql
     env_file:
