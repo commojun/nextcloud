@@ -11,4 +11,10 @@ COPY supervisord.conf /
 
 ENV NEXTCLOUD_UPDATE=1
 
+# サムネイルの自動生成をcronjobに任せるための設定
+# 要アプリインストール Preview Generator
+# 詳しくは https://github.com/nextcloud/previewgenerator
+RUN echo "*/10 * * * * /var/www/html/occ preview:pre-generate" >> \
+    /var/spool/cron/crontabs/www-data
+
 CMD ["/usr/bin/supervisord", "-c", "/supervisord.conf"]
