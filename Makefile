@@ -16,8 +16,8 @@ build:
 
 update: pull build up
 
-shell/%:
-	docker-compose exec $* bash
+shell:
+	docker-compose exec -u www-data app bash
 
 logs:
 	docker-compose logs -f
