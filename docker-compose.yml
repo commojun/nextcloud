@@ -34,8 +34,6 @@ services:
     volumes:
       - ${APPDATA_MOUNTPOINT}:/var/www/html
       - ${MNT1}:${MNT1}
-      - ${MNT2}:${MNT2}
-      - ${MNT3}:${MNT3}
     env_file:
       - envfile
     restart: always
