@@ -42,7 +42,7 @@ services:
         max-size: "10m"
         max-file: "3"
   nginx:
-    imgae: nginx
+    image: nginx
     restart: always
         volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
