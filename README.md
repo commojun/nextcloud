@@ -5,7 +5,7 @@
 
 cloudflare tunnelを使って公開設定をしたとき、リポジトリ側以外にも設定事項があった
 
-### httpsセキュリティ関連
+### セキュリティ関連
 参考: https://docs.nextcloud.com/server/27/admin_manual/installation/harden_server.html#enable-http-strict-transport-security
 
 nextcloudルートディレクトリの `.htaccess` に以下の記述を追加
@@ -15,6 +15,23 @@ nextcloudルートディレクトリの `.htaccess` に以下の記述を追加
 
 +    Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
 ~~
+```
+
+`config/config.php` にはこんな設定を追加している(環境変数で追加できているものもあるかも)
+
+```
+  'trusted_domains' => 
+  array (
+    0 => '192.168.10.30:58888',
+    1 => 'nextcloud.commojun.com',
+  ),
+  'trusted_proxies' => 
+  array (
+    0 => '192.168.10.30',
+  ),
+  'overwritehost' => 'nextcloud.commojun.com',
+  'overwriteprotocol' => 'https',
+  'overwrite.cli.url' => 'https://nextcloud.commojun.com',
 ```
 
 ### リダイレクト関連
