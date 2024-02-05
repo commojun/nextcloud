@@ -41,15 +41,6 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-  nginx:
-    image: nginx
-    restart: always
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "3"
   cloudflare:
     restart: always
     image: cloudflare/cloudflared
