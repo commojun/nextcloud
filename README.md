@@ -1,10 +1,6 @@
 # nextcloud
 自宅用nextcloud
 
-# cloudflare tunnelを使っての追加設定
-
-cloudflare tunnelを使って公開設定をしたとき、リポジトリ側以外にも設定事項があった
-
 ### セキュリティ関連
 参考: https://docs.nextcloud.com/server/27/admin_manual/installation/harden_server.html#enable-http-strict-transport-security
 
@@ -36,6 +32,8 @@ nextcloudルートディレクトリの `.htaccess` に以下の記述を追加
 
 ### リダイレクト関連
 
+cloudflareを使うときは、appに直接つないでいたのでこんな感じの設定をルートディレクトリの `.htaccess` に追加した
+
 だいたいこんな感じに変更や追加
 
 ```
@@ -49,3 +47,9 @@ nextcloudルートディレクトリの `.htaccess` に以下の記述を追加
 -  RewriteRule ^\.well-known/(?!acme-challenge|pki-validation) /index.php [QSA,L]
 +  RewriteRule ^\.well-known/(?!acme-challenge|pki-validation) https://%{SERVER_NAME}/index.php [QSA,L]
 ```
+
+## 2024-02-06メモ
+
+cloudflareとの相性が良くない。100MB以上のファイルがクライアントアプリで同期できないなどの問題がある
+
+https://github.com/nextcloud/desktop/issues/4278
