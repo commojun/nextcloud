@@ -1,3 +1,5 @@
+.PHONY: db
+
 refresh: down up
 
 up:
@@ -21,3 +23,6 @@ shell:
 
 logs:
 	docker-compose logs -f
+
+db:
+	docker compose exec db mysql -uroot -p nextcloud
