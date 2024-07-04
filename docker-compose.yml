@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: mariadb:10.8
+    image: mariadb:10.11
     volumes:
       - ${DB_MOUNTPOINT}:/var/lib/mysql
     env_file:
@@ -10,6 +10,7 @@ services:
     environment:
       MARIADB_AUTO_UPGRADE: 1
       MARIADB_INITDB_SKIP_TZINFO: 1
+      MYSQL_HOST: localhost
     command:
       - "--character-set-server=utf8mb4"
       - "--collation-server=utf8mb4_unicode_ci"

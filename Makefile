@@ -9,8 +9,8 @@ down:
 	docker-compose down
 
 pull:
-	docker pull nextcloud:apache
-	docker pull mariadb:10.8
+	docker pull nextcloud:28.0.7-apache
+	docker pull mariadb:10.11
 	docker pull redis:latest
 
 build:
